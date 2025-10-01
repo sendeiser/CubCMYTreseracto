@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización Cubo CMY y Teseracto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Visualización Interactiva: Cubo CMY y Teseracto</h1>
+    </header>
+    
+    <main>
+        <div class="controls-container">
+            <div class="view-toggle">
+                <button id="cube-view" class="active">Cubo CMY</button>
+                <button id="tesseract-view">Teseracto</button>
+            </div>
+            
+            <div class="interaction-controls">
+                <div class="control-group">
+                    <label for="rotation-speed">Velocidad de rotación:</label>
+                    <input type="range" id="rotation-speed" min="0" max="5" step="0.1" value="1">
+                </div>
+                
+                <div class="control-group">
+                    <label>Rotación manual:</label>
+                    <div class="rotation-buttons">
+                        <button id="rotate-x">Rotar X</button>
+                        <button id="rotate-y">Rotar Y</button>
+                        <button id="rotate-z">Rotar Z</button>
+                        <button id="rotate-w" class="tesseract-only">Rotar W (4D)</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <button id="reset-view">Restablecer vista</button>
+                    <button id="toggle-wireframe">Alternar wireframe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="visualization-container"></div>
+        
+        <div class="info-panel">
+            <h2>Información</h2>
+            <div id="info-content">
+                <div id="cube-info" class="info-section active">
+                    <h3>Cubo CMY</h3>
+                    <p>El cubo CMY es una representación tridimensional del modelo de color sustractivo, con tres caras translúcidas de colores:</p>
+                    <ul>
+                        <li><strong>C</strong>: Cian - Una cara translúcida que absorbe la luz roja</li>
+                        <li><strong>M</strong>: Magenta - Una cara translúcida que absorbe la luz verde</li>
+                        <li><strong>Y</strong>: Amarillo (Yellow) - Una cara translúcida que absorbe la luz azul</li>
+                    </ul>
+                    <p>La translucidez de estas caras permite que la luz las atraviese parcialmente, creando efectos visuales de superposición de colores. Cuando las tres caras interactúan, pueden crear efectos visuales complejos que sirven como base para entender dimensiones superiores.</p>
+                </div>
+                
+                <div id="tesseract-info" class="info-section">
+                    <h3>Teseracto CMY</h3>
+                    <p>El teseracto es un hipercubo de 4 dimensiones, una extensión del cubo en la cuarta dimensión espacial.</p>
+                    <p>En esta visualización:</p>
+                    <ul>
+                        <li>Las caras translúcidas de colores CMY se extienden a la cuarta dimensión</li>
+                        <li>La transparencia crea la ilusión de profundidad adicional</li>
+                        <li>El cubo interior representa el mismo objeto "desplazado" en la cuarta dimensión</li>
+                        <li>Las líneas conectoras muestran el "movimiento" a través de la cuarta dimensión</li>
+                    </ul>
+                    <p>La ilusión de la cuarta dimensión se logra mediante:</p>
+                    <ul>
+                        <li>Transparencia variable de las caras coloreadas</li>
+                        <li>Efectos de distorsión en las conexiones entre cubos</li>
+                        <li>Rotación simulada en el eje W (cuarta dimensión)</li>
+                        <li>Interacción visual entre los colores CMY en diferentes "profundidades" dimensionales</li>
+                    </ul>
+                    <p>Observa cómo los colores se mezclan y transforman cuando rotan en 4D, creando efectos imposibles en un espacio tridimensional normal.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Desarrollado para exploración educativa del espacio de color CMY y geometría 4D</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
